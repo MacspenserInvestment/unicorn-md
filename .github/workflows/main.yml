@@ -12,8 +12,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm install
-      - run: npm start
+      - name: Install and Start
+        run: |
+          npm install --force
+          npm start
         env:
           SESSION_ID: ${{ secrets.SESSION_ID }}
           
